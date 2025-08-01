@@ -6,14 +6,14 @@ import { routeTree } from "./routeTree.gen";
 
 /**
  * Main App Entry Point
- * 
+ *
  * PROVIDER PATTERN SETUP:
  * This is where we set up the "providers" that wrap our entire app
  * Think of providers as "services" that any component can tap into
- * 
+ *
  * LAYER BY LAYER:
  * 1. StrictMode - React's development helper (finds potential problems)
- * 2. QueryClientProvider - Makes TanStack Query available everywhere  
+ * 2. QueryClientProvider - Makes TanStack Query available everywhere
  * 3. RouterProvider - Makes TanStack Router available everywhere
  * 4. Our actual app routes/components
  */
@@ -24,11 +24,17 @@ const router = createRouter({ routeTree });
 
 // Create TanStack Query client with default configuration
 // This manages all our server state, caching, background refetching, etc.
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      experimental_prefetchInRender: true,
+    },
+  },
+});
 
 /**
  * Root App Component
- * 
+ *
  * PROVIDER NESTING ORDER MATTERS:
  * - QueryClientProvider must wrap RouterProvider (routes need access to queries)
  * - StrictMode wraps everything (helps catch bugs in development)

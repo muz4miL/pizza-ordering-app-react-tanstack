@@ -338,6 +338,12 @@ button:disabled {
   margin: 0 auto;
 }
 
+.single-order-loading {
+  text-align: center;
+  font-size: 18px;
+  color: var(--secondary);
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
