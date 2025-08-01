@@ -5,6 +5,8 @@ export const usePizzaOfTheDay = () => {
 
   useDebugValue(pizzaOfTheDay ? `${pizzaOfTheDay.name}` : "Loading...");
 
+  // Force deployment update
+
   useEffect(() => {
     async function fetchPizzaOfTheDay() {
       const response = await fetch("https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/pizza-of-the-day");
