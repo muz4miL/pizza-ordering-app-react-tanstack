@@ -16,7 +16,7 @@
 export default async function getPastOrders(page) {
   // Make request with page parameter in query string
   // URL becomes: /api/past-orders?page=1 or /api/past-orders?page=2
-  const response = await fetch(`/api/past-orders?page=${page}`);
+  const response = await fetch(`https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/past-orders?page=${page}`);
   
   // Convert JSON response to JavaScript array
   const data = await response.json();

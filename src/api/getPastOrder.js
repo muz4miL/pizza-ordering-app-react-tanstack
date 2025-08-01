@@ -18,7 +18,7 @@ export default async function getPastOrder(order) {
 
   // Fetch specific order details from backend
   // URL becomes: /api/past-order/12345 (where 12345 is the order ID)
-  const response = await fetch(`/api/past-order/${order}`);
+  const response = await fetch(`https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/past-order/${order}`);
 
   // Parse JSON response into JavaScript object
   const data = await response.json();

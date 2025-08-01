@@ -17,7 +17,7 @@
 export default async function postContact(name, email, message) {
   // Make HTTP POST request to our backend API
   // This gets proxied to http://localhost:3000/api/contact (see vite.config.js)
-  const response = await fetch("/api/contact", {
+  const response = await fetch("https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/contact", {
     method: "POST", // POST because we're SENDING data to server (not GET-ting data)
 
     headers: {
