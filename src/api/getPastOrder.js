@@ -12,13 +12,11 @@
  * @returns {Promise<Object>} - Order details with items array
  */
 export default async function getPastOrder(order) {
-  // Artificial delay to simulate slow network - great for testing loading states!
-  // In production, you'd remove this line
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  // Removed artificial delay for production
 
   // Fetch specific order details from backend
   // URL becomes: /api/past-order/12345 (where 12345 is the order ID)
-  const response = await fetch(`https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/past-order/${order}`);
+  const response = await fetch(`https://pizza-api-99.vercel.app/api/past-order/${order}`);
 
   // Parse JSON response into JavaScript object
   const data = await response.json();

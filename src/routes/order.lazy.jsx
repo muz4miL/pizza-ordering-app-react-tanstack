@@ -24,7 +24,7 @@ function Order() {
   async function checkout() {
     setLoading(true);
 
-    await fetch("https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/order", {
+    await fetch("https://pizza-api-99.vercel.app/api/order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Order() {
   }, []);
 
   async function fetchPizzaTypes() {
-    const pizzasRes = await fetch("https://pizza-qei1istsz-muzamil-shirazs-projects.vercel.app/api/pizzas");
+    const pizzasRes = await fetch("https://pizza-api-99.vercel.app/api/pizzas");
     const pizzasJson = await pizzasRes.json();
     setPizzaTypes(pizzasJson);
     setLoading(false);
